@@ -5,7 +5,7 @@ Summary(pl):	Informacje z filesystemu proc
 Summary(tr):	proc dosya sistemi bilgileri
 Name:		procinfo
 Version:	17
-Release:	4
+Release:	5
 License:	GPL
 Group:		Utilities/System
 Group(pl):	Narzêdzia/System
@@ -42,6 +42,15 @@ procinfo, /proc dosya sisteminden bilgi almanýza izin veren bir
 pakettir. /proc çekirdek dosya sistemini tutar ve koþan
 çekirdeðinizden bilgi edinebileceðiniz bir dizin yapýsý sunar.
 
+%package perl
+Summary:	procinfo perl helper scripts
+Group:		Utilities/System
+Group(pl):	Narzêdzia/System
+Requires:	%{name} = %{version}
+
+%description perl
+Procinfo perl helper scripts
+
 %prep
 %setup  -q
 %patch0 -p1
@@ -70,6 +79,12 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc README.gz
+%attr(755,root,root) %{_bindir}/procinfo
+%{_mandir}/man8/procinfo*
 
-%attr(755,root,root) %{_bindir}/*
-%{_mandir}/man8/*
+%files perl
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_bindir}/lsdev
+%attr(755,root,root) %{_bindir}/socklist
+%{_mandir}/man8/lsdev*
+%{_mandir}/man8/socklist*
