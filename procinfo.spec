@@ -45,7 +45,7 @@ edinebileceðiniz bir dizin yapýsý sunar.
 
 %build
 make \
-	CFLAGS="$RPM_OPT_FLAGS -I/usr/include/ncurses" \
+	CFLAGS="$RPM_OPT_FLAGS -I%{_includedir}/ncurses" \
 	LDLIBS="-lncurses"
 
 %install
