@@ -4,16 +4,16 @@ Summary(fr):	informations sur le système de fichiers proc
 Summary(pl):	Informacje z filesystemu proc
 Summary(tr):	proc dosya sistemi bilgileri
 Name:		procinfo
-Version:	17
-Release:	5
+Version:	18
+Release:	1
 License:	GPL
-Group:		Utilities/System
-Group(pl):	Narzêdzia/System
+Group:		Applications/System
+Group(de):	Applikationen/System
+Group(pl):	Aplikacje/System
 Source0:	ftp://ftp.cistron.nl/pub/people/svm/%{name}-%{version}.tar.gz
-Patch0:		procinfo-DESTDIR.patch
-Patch1:		procinfo-cpus.patch
-Patch2:		procinfo-smpfix.patch
-BuildRequires:	ncurses-devel >= 5.0
+Patch0:		%{name}-DESTDIR.patch
+Patch1:		%{name}-uptime.patch
+BuildRequires:	ncurses-devel >= 5.2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -44,8 +44,9 @@ pakettir. /proc çekirdek dosya sistemini tutar ve koþan
 
 %package perl
 Summary:	procinfo perl helper scripts
-Group:		Utilities/System
-Group(pl):	Narzêdzia/System
+Group:		Applications/System
+Group(de):	Applikationen/System
+Group(pl):	Aplikacje/System
 Requires:	%{name} = %{version}
 
 %description perl
@@ -55,10 +56,9 @@ Procinfo perl helper scripts
 %setup  -q
 %patch0 -p1
 %patch1 -p1
-%patch2 -p1
 
 %build
-make	CFLAGS="$RPM_OPT_FLAGS -I/usr/include/ncurses" \
+make	CFLAGS="%{rpmcflags} -I/usr/include/ncurses" \
 	LDLIBS="-lncurses"
 
 %install
