@@ -5,7 +5,7 @@ Summary(pl):	Informacje z filesystemu proc
 Summary(tr):	proc dosya sistemi bilgileri
 Name:		procinfo
 Version:	17
-Release:	3
+Release:	4
 License:	GPL
 Group:		Utilities/System
 Group(pl):	Narzêdzia/System
