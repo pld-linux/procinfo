@@ -9,7 +9,7 @@ Release:	3
 License:	GPL
 Group:		Utilities/System
 Group(pl):	Narzêdzia/System
-Source:		ftp://ftp.cistron.nl/pub/people/svm/%{name}-%{version}.tar.gz
+Source0:	ftp://ftp.cistron.nl/pub/people/svm/%{name}-%{version}.tar.gz
 Patch0:		procinfo-DESTDIR.patch
 Patch1:		procinfo-cpus.patch
 Patch2:		procinfo-smpfix.patch
@@ -17,10 +17,10 @@ BuildRequires:	ncurses-devel >= 5.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-The procinfo command gets system data from the /proc directory (the kernel
-filesystem), formats it and displays it on standard output. You can use
-procinfo to acquire information about your system from the kernel as it is
-running.
+The procinfo command gets system data from the /proc directory (the
+kernel filesystem), formats it and displays it on standard output. You
+can use procinfo to acquire information about your system from the
+kernel as it is running.
 
 %description -l de
 Mit dem Paket procinfo können Sie nützliche Informationen aus /proc
@@ -28,19 +28,19 @@ abrufen. /proc ist das Kernel-Dateisystem, das Informationen über den
 laufenden Kernel enthält.
 
 %description -l fr
-procinfo est un paquetage permettant d'obtenir des informations utiles à
-partir de /proc. /proc est le système de fichiers du noyau. C'est l'endroit
-où vous pouvez allez pour obtenir des informations sur le noyau qui
-s'exécute.
+procinfo est un paquetage permettant d'obtenir des informations utiles
+à partir de /proc. /proc est le système de fichiers du noyau. C'est
+l'endroit où vous pouvez allez pour obtenir des informations sur le
+noyau qui s'exécute.
 
 %description -l pl
-Procinfo jest programem, który przekazuje informacje wyczytane z systemu
-plików j±dra - /proc.
+Procinfo jest programem, który przekazuje informacje wyczytane z
+systemu plików j±dra - /proc.
 
 %description -l tr
-procinfo, /proc dosya sisteminden bilgi almanýza izin veren bir pakettir.
-/proc çekirdek dosya sistemini tutar ve koþan çekirdeðinizden bilgi
-edinebileceðiniz bir dizin yapýsý sunar.
+procinfo, /proc dosya sisteminden bilgi almanýza izin veren bir
+pakettir. /proc çekirdek dosya sistemini tutar ve koþan
+çekirdeðinizden bilgi edinebileceðiniz bir dizin yapýsý sunar.
 
 %prep
 %setup  -q
