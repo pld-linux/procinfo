@@ -67,10 +67,3 @@ rm -rf $RPM_BUILD_ROOT
 
 %attr(755,root,root) %{_bindir}/*
 %{_mandir}/man8/*
-
-%changelog
-* Fri May 14 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
-  [17-1]
-- package is FHS 2.0 compliant,
-- spec based on RH version and rewritten by Artur Frysiak <wiget@pld.org.pl>
-  and Wojtek ¦lusarczyk <wojtek@shadow.eu.org>.
