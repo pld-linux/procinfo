@@ -4,14 +4,14 @@ Summary(fr):	informations sur le système de fichiers proc
 Summary(pl):	Informacje z filesystemu proc 
 Summary(tr):	proc dosya sistemi bilgileri
 Name:		procinfo
-Version:	15
-Release:	1d
+Version:	17
+Release:	1
 Copyright:	GPL
 Group:		Utilities/System
 Group(pl):	U¿ytki/System
 URL:		ftp://sunsite.unc.edu/pub/Linux/system/status/ps
-Source:		%{name}-%{version}.tar.gz
-Patch:		%{name}.patch
+Source:		ftp.cistron.nl:/pub/people/svm/%{name}-%{version}.tar.gz
+Patch:		procinfo-DESTDIR.patch
 Buildroot:	/tmp/%{name}-%{version}-root
 
 %description
@@ -41,33 +41,44 @@ edinebileceðiniz bir dizin yapýsý sunar.
 
 %prep
 %setup -q
-%patch -p1 
+%patch -p1
 
 %build
-make CFLAGS="$RPM_OPT_FLAGS"
+make \
+	CFLAGS="$RPM_OPT_FLAGS -I/usr/include/ncurses" \
+	LDLIBS="-lncurses"
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-install -d $RPM_BUILD_ROOT/usr/{bin,man/man8}
+install -d $RPM_BUILD_ROOT{%{_prefix},%{_bindir},%{_mandir}/man8}
 
-make prefix=$RPM_BUILD_ROOT/usr install
+make install \
+	DESTDIR="$RPM_BUILD_ROOT" \
+	prefix=%{_prefix} \
+	bindir=%{_bindir} \
+	mandir=%{_mandir}
 
-bzip2 -9 README $RPM_BUILD_ROOT/usr/man/man8/*
+
+gzip -9fn README $RPM_BUILD_ROOT%{_mandir}/man8/*
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc README.bz2 
+%doc README.gz
 
-%attr(755,root,root) /usr/bin/procinfo
-%attr(755,root,root) /usr/bin/lsdev
-%attr(755,root,root) /usr/bin/socklist
-%attr(644,root, man) /usr/man/man8/*
+%attr(755,root,root) %{_bindir}/procinfo
+%attr(755,root,root) %{_bindir}/lsdev
+%attr(755,root,root) %{_bindir}/socklist
+%{_mandir}/man8/*
 
 %changelog
+* Sun May 16 1999 Artur Frysiak <wiget@pld.org.pl>
+  [17-1]
+- recompiled on new rpm
+
 * Tue Oct 06 1998 Wojtek ¦lusarczyk <wojtek@shadow.eu.org>
   [15-1d]
 - translation modified for pl,
