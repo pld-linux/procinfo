@@ -1,0 +1,21 @@
+--- procinfo-17/procinfo.c.cpus	Mon Oct  4 11:14:12 1999
++++ procinfo-17/procinfo.c	Mon Oct  4 11:13:58 1999
+@@ -784,11 +784,15 @@
+     cpuinfofp = myfopen (PROC_DIR "cpuinfo");
+     if (cpuinfofp) {
+ 	while (fgets (line, sizeof (line), cpuinfofp))
+-	    if (!strncmp ("processor", line, 9))
++	    if (!strncmp ("processor", line, 9))          /* intel */
+ 		nr_cpus++;
++	    else if (strncmp ("ncpus active", line, 12))  /* sparc */
++		nr_cpus = atoi(line+19);
++	    else if (strncmp ("cpus detected", line, 13)) /* alpha */
++		nr_cpus = atoi(line+27);
+ 	fclose (cpuinfofp);
+     }
+-    else
++    if (!nr_cpus)
+ 	nr_cpus = 1;
+ 
+     /* Gets called from winsz(), but in case stdout is redirected: */
+
