@@ -1,0 +1,38 @@
+diff -ur procinfo-17.old/Makefile procinfo-17/Makefile
+--- procinfo-17.old/Makefile	Mon May 17 14:37:10 1999
++++ procinfo-17/Makefile	Mon May 17 14:44:25 1999
+@@ -1,6 +1,11 @@
+ ### Makefile for procinfo.
+ 
+ prefix=/usr
++exec_prefix=${prefix}
++bindir=${exec_prefix}/bin
++mandir=${prefix}/man
++man8dir=${mandir}/man8
++DESTDIR=
+ 
+ CC = gcc -Wall -Wstrict-prototypes
+ 
+@@ -32,14 +37,14 @@
+ procinfo:	procinfo.o routines.o
+ 
+ install: procinfo procinfo.8 lsdev.pl socklist.pl lsdev.8
+-	-mkdir -p $(prefix)/bin
+-	install procinfo $(prefix)/bin/procinfo
+-	install lsdev.pl $(prefix)/bin/lsdev
+-	install socklist.pl $(prefix)/bin/socklist
+-	-mkdir -p $(prefix)/man/man8
+-	install -m 644  procinfo.8 $(prefix)/man/man8/procinfo.8
+-	install -m 644  lsdev.8 $(prefix)/man/man8/lsdev.8
+-	install -m 644  socklist.8 $(prefix)/man/man8/socklist.8
++	-mkdir -p $(DESTDIR)$(bindir)
++	install procinfo $(DESTDIR)$(bindir)/procinfo
++	install lsdev.pl $(DESTDIR)$(bindir)/lsdev
++	install socklist.pl $(DESTDIR)$(bindir)/socklist
++	-mkdir -p $(DESTDIR)$(man8dir)
++	install -m 644  procinfo.8 $(DESTDIR)$(man8dir)/procinfo.8
++	install -m 644  lsdev.8 $(DESTDIR)$(man8dir)/lsdev.8
++	install -m 644  socklist.8 $(DESTDIR)$(man8dir)/socklist.8
+ 
+ clean:
+ 	rm -f procinfo procinfo.0 *.o *~ out
