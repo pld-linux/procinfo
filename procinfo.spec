@@ -45,6 +45,7 @@ pakettir. /proc çekirdek dosya sistemini tutar ve koþan
 
 %package perl
 Summary:	procinfo perl helper scripts
+Summary(pl):	Pomocnicze skrypty perlowe do procinfo
 Group:		Applications/System
 Group(de):	Applikationen/System
 Group(pl):	Aplikacje/System
@@ -53,6 +54,9 @@ Requires:	%{name} = %{version}
 %description perl
 Procinfo perl helper scripts.
 
+%description perl -l pl
+Pomocnicze skrypty perlowe do procinfo.
+
 %prep
 %setup  -q
 %patch0 -p1
@@ -60,7 +64,7 @@ Procinfo perl helper scripts.
 %patch2 -p1
 
 %build
-make	CFLAGS="%{rpmcflags} -I/usr/include/ncurses" \
+%{__make} CFLAGS="%{rpmcflags} -I/usr/include/ncurses" \
 	LDLIBS="-lncurses"
 
 %install
@@ -73,7 +77,7 @@ install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man8}
 	bindir=%{_bindir} \
 	mandir=%{_mandir}
 
-gzip -9nf README $RPM_BUILD_ROOT%{_mandir}/man8/*
+gzip -9nf README
 
 %clean
 rm -rf $RPM_BUILD_ROOT
