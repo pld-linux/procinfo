@@ -8,9 +8,9 @@ Version:	17
 Release:	1
 Copyright:	GPL
 Group:		Utilities/System
-Group(pl):	U¿ytki/System
+Group(pl):	Narzêdzia/System
 URL:		ftp://sunsite.unc.edu/pub/Linux/system/status/ps
-Source:		ftp.cistron.nl:/pub/people/svm/%{name}-%{version}.tar.gz
+Source:		ftp://ftp.cistron.nl/pub/people/svm/%{name}-%{version}.tar.gz
 Patch:		procinfo-DESTDIR.patch
 Buildroot:	/tmp/%{name}-%{version}-root
 
@@ -45,7 +45,7 @@ edinebileceðiniz bir dizin yapýsý sunar.
 
 %build
 make \
-	CFLAGS="$RPM_OPT_FLAGS -I%{_includedir}/ncurses" \
+	CFLAGS="$RPM_OPT_FLAGS -I/usr/include/ncurses" \
 	LDLIBS="-lncurses"
 
 %install
