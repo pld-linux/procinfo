@@ -8,8 +8,6 @@ Version:	18
 Release:	2
 License:	GPL
 Group:		Applications/System
-Group(de):	Applikationen/System
-Group(pl):	Aplikacje/System
 Source0:	ftp://ftp.cistron.nl/pub/people/svm/%{name}-%{version}.tar.gz
 Patch0:		%{name}-DESTDIR.patch
 Patch1:		%{name}-uptime.patch
@@ -47,8 +45,6 @@ pakettir. /proc çekirdek dosya sistemini tutar ve koþan
 Summary:	procinfo perl helper scripts
 Summary(pl):	Pomocnicze skrypty perlowe do procinfo
 Group:		Applications/System
-Group(de):	Applikationen/System
-Group(pl):	Aplikacje/System
 Requires:	%{name} = %{version}
 
 %description perl
