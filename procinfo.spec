@@ -9,6 +9,7 @@ Release:	2
 License:	GPL
 Group:		Applications/System
 Source0:	ftp://ftp.cistron.nl/pub/people/svm/%{name}-%{version}.tar.gz
+# Source0-md5:	27658d0a69040aca05a65b9888599d50
 Patch0:		%{name}-DESTDIR.patch
 Patch1:		%{name}-uptime.patch
 Patch2:		%{name}-lsdev.patch
