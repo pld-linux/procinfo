@@ -14,7 +14,7 @@ Patch0:		procinfo-DESTDIR.patch
 Patch1:		procinfo-cpus.patch
 Patch2:		procinfo-smpfix.patch
 BuildRequires:	ncurses-devel >= 5.0
-Buildroot:	/tmp/%{name}-%{version}-root
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 The procinfo command gets system data from the /proc directory (the kernel
