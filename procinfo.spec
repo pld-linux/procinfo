@@ -18,10 +18,6 @@ procinfo is a package to allow you to get useful information
 from /proc.  /proc is the kernel filesystem.  This is a place
 you can go to acquire information from your running kernel.
 
-%description -l pl
-Procinfo jest programem, który przekazuje informacje wyczytane z systemu 
-plików j±dra - /proc.
-
 %description -l de
 Mit dem Paket procinfo können Sie nützliche Informationen aus
 /proc abrufen. /proc ist das Kernel-Dateisystem, das Informationen
@@ -32,6 +28,10 @@ procinfo est un paquetage permettant d'obtenir des informations
 utiles à partir de /proc. /proc est le système de fichiers du noyau.
 C'est l'endroit où vous pouvez allez pour obtenir des informations
 sur le noyau qui s'exécute.
+
+%description -l pl
+Procinfo jest programem, który przekazuje informacje wyczytane z systemu 
+plików j±dra - /proc.
 
 %description -l tr
 procinfo, /proc dosya sisteminden bilgi almanýza izin veren bir pakettir.
