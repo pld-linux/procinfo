@@ -56,7 +56,7 @@ make	CFLAGS="$RPM_OPT_FLAGS -I/usr/include/ncurses" \
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_prefix},%{_bindir},%{_mandir}/man8}
 
-make install \
+%{__make} install \
 	DESTDIR="$RPM_BUILD_ROOT" \
 	prefix=%{_prefix} \
 	bindir=%{_bindir} \
