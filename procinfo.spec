@@ -9,7 +9,6 @@ Release:	1
 Copyright:	GPL
 Group:		Utilities/System
 Group(pl):	Narzêdzia/System
-URL:		ftp://sunsite.unc.edu/pub/Linux/system/status/ps
 Source:		ftp://ftp.cistron.nl/pub/people/svm/%{name}-%{version}.tar.gz
 Patch:		procinfo-DESTDIR.patch
 Buildroot:	/tmp/%{name}-%{version}-root
@@ -44,13 +43,11 @@ edinebileceðiniz bir dizin yapýsý sunar.
 %patch -p1
 
 %build
-make \
-	CFLAGS="$RPM_OPT_FLAGS -I/usr/include/ncurses" \
+make	CFLAGS="$RPM_OPT_FLAGS -I/usr/include/ncurses" \
 	LDLIBS="-lncurses"
 
 %install
 rm -rf $RPM_BUILD_ROOT
-
 install -d $RPM_BUILD_ROOT{%{_prefix},%{_bindir},%{_mandir}/man8}
 
 make install \
@@ -58,7 +55,6 @@ make install \
 	prefix=%{_prefix} \
 	bindir=%{_bindir} \
 	mandir=%{_mandir}
-
 
 gzip -9fn README $RPM_BUILD_ROOT%{_mandir}/man8/*
 
@@ -69,33 +65,12 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc README.gz
 
-%attr(755,root,root) %{_bindir}/procinfo
-%attr(755,root,root) %{_bindir}/lsdev
-%attr(755,root,root) %{_bindir}/socklist
+%attr(755,root,root) %{_bindir}/*
 %{_mandir}/man8/*
 
 %changelog
-* Sun May 16 1999 Artur Frysiak <wiget@pld.org.pl>
+* Fri May 14 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
   [17-1]
-- recompiled on new rpm
-
-* Tue Oct 06 1998 Wojtek ¦lusarczyk <wojtek@shadow.eu.org>
-  [15-1d]
-- translation modified for pl,
-- updated to procinfo-14,
-- minor modificatons of the spec file.
-- added ncurses patch prepared 
-  by M. Ró¿ycki <macro@ds2.pg.gda.pl>.
-
-* Wed Jun 17 1998 Wojtek ¦lusarczyk <wojtek@shadow.eu.org>
-  [13-3]
-- build against glibc-2.1.
-
-* Mon Apr 27 1998 Prospector System <bugs@redhat.com>
-- translations modified for de, fr, tr
-
-* Thu Oct 23 1997 Michael K. Johnson <johnsonm@redhat.com>
-- updated to version 0.11
-
-* Tue Jun 17 1997 Erik Troan <ewt@redhat.com>
-- built against glibc
+- package is FHS 2.0 compliat,
+- spec based on RH version and rewrited by Artur Frysiak <wiget@pld.org.pl>
+  and Wojtek ¦lusarczyk <wojtek@shadow.eu.org>.
