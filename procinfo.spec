@@ -5,7 +5,7 @@ Summary(pl):	Informacje z filesystemu proc
 Summary(tr):	proc dosya sistemi bilgileri
 Name:		procinfo
 Version:	18
-Release:	1
+Release:	2
 License:	GPL
 Group:		Applications/System
 Group(de):	Applikationen/System
@@ -13,6 +13,7 @@ Group(pl):	Aplikacje/System
 Source0:	ftp://ftp.cistron.nl/pub/people/svm/%{name}-%{version}.tar.gz
 Patch0:		%{name}-DESTDIR.patch
 Patch1:		%{name}-uptime.patch
+Patch2:		%{name}-lsdev.patch
 BuildRequires:	ncurses-devel >= 5.2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -50,12 +51,13 @@ Group(pl):	Aplikacje/System
 Requires:	%{name} = %{version}
 
 %description perl
-Procinfo perl helper scripts
+Procinfo perl helper scripts.
 
 %prep
 %setup  -q
 %patch0 -p1
 %patch1 -p1
+%patch2 -p1
 
 %build
 make	CFLAGS="%{rpmcflags} -I/usr/include/ncurses" \
@@ -63,7 +65,7 @@ make	CFLAGS="%{rpmcflags} -I/usr/include/ncurses" \
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_prefix},%{_bindir},%{_mandir}/man8}
+install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man8}
 
 %{__make} install \
 	DESTDIR="$RPM_BUILD_ROOT" \
