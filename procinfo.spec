@@ -5,7 +5,7 @@ Summary(pl):	Informacje z filesystemu proc
 Summary(tr):	proc dosya sistemi bilgileri
 Name:		procinfo
 Version:	18
-Release:	2
+Release:	3
 License:	GPL
 Group:		Applications/System
 Source0:	ftp://ftp.cistron.nl/pub/people/svm/%{name}-%{version}.tar.gz
