@@ -5,12 +5,13 @@ Summary(pl):	Informacje z filesystemu proc
 Summary(tr):	proc dosya sistemi bilgileri
 Name:		procinfo
 Version:	17
-Release:	1
+Release:	2
 Copyright:	GPL
 Group:		Utilities/System
 Group(pl):	Narzêdzia/System
 Source:		ftp://ftp.cistron.nl/pub/people/svm/%{name}-%{version}.tar.gz
 Patch:		procinfo-DESTDIR.patch
+BuildRequires:	ncurses-devel >= 5.0
 Buildroot:	/tmp/%{name}-%{version}-root
 
 %description
