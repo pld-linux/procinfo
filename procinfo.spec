@@ -61,7 +61,9 @@ Pomocnicze skrypty perlowe do procinfo.
 %patch2 -p1
 
 %build
-%{__make} CFLAGS="%{rpmcflags} -I/usr/include/ncurses" \
+%{__make} \
+	CC="%{__cc}" \
+	CFLAGS="%{rpmcflags} -I/usr/include/ncurses" \
 	LDLIBS="-lncurses"
 
 %install
