@@ -1,8 +1,8 @@
 Summary:	A tool for gathering and displaying system information
-Summary(de):	Informationen zum proc-Dateisystem
-Summary(fr):	informations sur le système de fichiers proc
-Summary(pl):	Informacje z filesystemu proc
-Summary(tr):	proc dosya sistemi bilgileri
+Summary(de.UTF-8):   Informationen zum proc-Dateisystem
+Summary(fr.UTF-8):   informations sur le systÃ¨me de fichiers proc
+Summary(pl.UTF-8):   Informacje z filesystemu proc
+Summary(tr.UTF-8):   proc dosya sistemi bilgileri
 Name:		procinfo
 Version:	18
 Release:	3
@@ -22,36 +22,36 @@ kernel filesystem), formats it and displays it on standard output. You
 can use procinfo to acquire information about your system from the
 kernel as it is running.
 
-%description -l de
-Mit dem Paket procinfo können Sie nützliche Informationen aus /proc
-abrufen. /proc ist das Kernel-Dateisystem, das Informationen über den
-laufenden Kernel enthält.
+%description -l de.UTF-8
+Mit dem Paket procinfo kÃ¶nnen Sie nÃ¼tzliche Informationen aus /proc
+abrufen. /proc ist das Kernel-Dateisystem, das Informationen Ã¼ber den
+laufenden Kernel enthÃ¤lt.
 
-%description -l fr
+%description -l fr.UTF-8
 procinfo est un paquetage permettant d'obtenir des informations utiles
-à partir de /proc. /proc est le système de fichiers du noyau. C'est
-l'endroit où vous pouvez allez pour obtenir des informations sur le
-noyau qui s'exécute.
+Ã  partir de /proc. /proc est le systÃ¨me de fichiers du noyau. C'est
+l'endroit oÃ¹ vous pouvez allez pour obtenir des informations sur le
+noyau qui s'exÃ©cute.
 
-%description -l pl
-Procinfo jest programem, który przekazuje informacje wyczytane z
-systemu plików j±dra - /proc.
+%description -l pl.UTF-8
+Procinfo jest programem, ktÃ³ry przekazuje informacje wyczytane z
+systemu plikÃ³w jÄ…dra - /proc.
 
-%description -l tr
-procinfo, /proc dosya sisteminden bilgi almanýza izin veren bir
-pakettir. /proc çekirdek dosya sistemini tutar ve koþan
-çekirdeðinizden bilgi edinebileceðiniz bir dizin yapýsý sunar.
+%description -l tr.UTF-8
+procinfo, /proc dosya sisteminden bilgi almanÄ±za izin veren bir
+pakettir. /proc Ã§ekirdek dosya sistemini tutar ve koÅŸan
+Ã§ekirdeÄŸinizden bilgi edinebileceÄŸiniz bir dizin yapÄ±sÄ± sunar.
 
 %package perl
 Summary:	procinfo perl helper scripts
-Summary(pl):	Pomocnicze skrypty perlowe do procinfo
+Summary(pl.UTF-8):   Pomocnicze skrypty perlowe do procinfo
 Group:		Applications/System
 Requires:	%{name} = %{version}-%{release}
 
 %description perl
 Procinfo perl helper scripts.
 
-%description perl -l pl
+%description perl -l pl.UTF-8
 Pomocnicze skrypty perlowe do procinfo.
 
 %prep
