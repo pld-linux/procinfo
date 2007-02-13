@@ -1,8 +1,8 @@
 Summary:	A tool for gathering and displaying system information
-Summary(de.UTF-8):   Informationen zum proc-Dateisystem
-Summary(fr.UTF-8):   informations sur le système de fichiers proc
-Summary(pl.UTF-8):   Informacje z filesystemu proc
-Summary(tr.UTF-8):   proc dosya sistemi bilgileri
+Summary(de.UTF-8):	Informationen zum proc-Dateisystem
+Summary(fr.UTF-8):	informations sur le système de fichiers proc
+Summary(pl.UTF-8):	Informacje z filesystemu proc
+Summary(tr.UTF-8):	proc dosya sistemi bilgileri
 Name:		procinfo
 Version:	18
 Release:	3
@@ -44,7 +44,7 @@ pakettir. /proc çekirdek dosya sistemini tutar ve koşan
 
 %package perl
 Summary:	procinfo perl helper scripts
-Summary(pl.UTF-8):   Pomocnicze skrypty perlowe do procinfo
+Summary(pl.UTF-8):	Pomocnicze skrypty perlowe do procinfo
 Group:		Applications/System
 Requires:	%{name} = %{version}-%{release}
 
