@@ -5,7 +5,7 @@ Summary(pl.UTF-8):	Informacje z filesystemu proc
 Summary(tr.UTF-8):	proc dosya sistemi bilgileri
 Name:		procinfo
 Version:	18
-Release:	5
+Release:	6
 License:	GPL
 Group:		Applications/System
 Source0:	ftp://ftp.cistron.nl/pub/people/00-OLD/sandervm/%{name}-%{version}.tar.gz
